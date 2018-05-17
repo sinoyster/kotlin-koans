@@ -10,12 +10,19 @@ fun example1(list: List<Int>) {
 
 fun Shop.getCitiesCustomersAreFrom(): Set<City> {
     // Return the set of cities the customers are from
-    todoCollectionTask()
+    // return this.customers
+    /*
+    var cities = HashSet<City>()
+    this.customers.forEach({cities.add(it.city)})
+    return cities
+    */
+    return  this.customers.map { it.city }.toSet()
+
 }
 
 fun Shop.getCustomersFrom(city: City): List<Customer> {
     // Return a list of the customers who live in the given city
-    todoCollectionTask()
+    return this.customers.filter { it.city == city }
 }
 
 

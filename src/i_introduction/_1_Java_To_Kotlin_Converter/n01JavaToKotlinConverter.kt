@@ -14,5 +14,6 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    //todoTask1(collection)
+    return "{${collection.joinToString(", ")}}"
 }
