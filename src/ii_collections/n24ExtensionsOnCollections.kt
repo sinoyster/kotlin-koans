@@ -12,8 +12,10 @@ fun todoTask24(): Nothing = TODO(
 )
 
 fun doSomethingStrangeWithCollection(collection: Collection<String>): Collection<String>? {
-    val groupsByLength = collection.groupBy { s -> todoTask24() }
+    val c = collection.sortedBy { it.length }
+    val groupsByLength = c.groupBy { s -> s.length }
+    println(groupsByLength.values)
+    return groupsByLength.values.maxBy { group -> group.size}
 
-    return groupsByLength.values.maxBy { group -> todoTask24() }
 }
 

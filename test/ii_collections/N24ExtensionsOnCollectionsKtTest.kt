@@ -24,6 +24,11 @@ class N24ExtensionsOnCollectionsKtTest {
         doTest(listOf("a", "c"), listOf("a", "bb", "c", "dd"))
     }
 
+
+    @Test fun testCollectionWithTwoGroupsOfMaximalSizeReverse() {
+        doTest(listOf("a", "c"), listOf( "bb", "dd", "a", "c"))
+    }
+
     private fun doTest(expected: Collection<String>?, argument: Collection<String>) {
         assertEquals("The function 'doSomethingStrangeWithCollection' should do at least something with a collection:",
                 expected, doSomethingStrangeWithCollection(argument))
